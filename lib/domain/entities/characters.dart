@@ -1,4 +1,3 @@
-
 import 'package:api_marvel/domain/entities/image_entity.dart';
 import 'package:equatable/equatable.dart';
 
@@ -20,7 +19,5 @@ class CharactersEntity extends Equatable {
         id,
         name,
         description,
-        image
       ];
-
 }

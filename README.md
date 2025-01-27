@@ -40,17 +40,23 @@ Para poder consumir dados da API da Marvel, você precisa de uma chave de API. S
 ### 4. Configure a API Key
 Agora que você tem a chave de API, você precisa configurá-la no projeto. Para isso, siga os passos:
 
-Crie um arquivo .env na raiz do seu projeto (se ainda não existir).
+Crie uma classe com a chave pra se reutilizada no enpoint, copie o caminho do arquivo no gitignore para que não seja visto
+ao subir seu código no github.
 
-Adicione a chave da API da Marvel ao arquivo .env:
-
-MARVEL_API_KEY=Sua_Chave_Aqui
-Certifique-se de substituir Sua_Chave_Aqui pela chave real obtida na etapa anterior.
+Gere a chave ts pelo dartPad; 
+Gere a hash Md5 no gerador https://www.md5hashgenerator.com/ inserindo ts+privateKey+publicKey;
 
 ### 5. Configuração de API Base URL
-Caso seja necessário configurar a URL base da API da Marvel, você pode editar o arquivo de configuração, geralmente localizado em lib/config.dart ou algo semelhante. A URL base da API da Marvel é:
+Sugiro abrir o Postman ou Insomnia para verificar o retorno da API: 
 
-https://gateway.marvel.com:443/v1/public/
+KEY_TS = gerado pelo dartPad
+PRIVATE_KEY = sua chave privada Marvel
+HASH_GERADA_PELO_MD5 = hash gerada pelo site https://www.md5hashgenerator.com/ - inserindo ts+privateKey+publicKey;
+
+A URL base da API da Marvel segue o como o passo 4
+http://gateway.marvel.com/v1/public/comics?ts=KEY_TS&apikey=PRIVATE_KEY&hash=HASH_GERADA_PELO_MD5
+
+Com essas informações você conseguirá gerar o endpoint com sucesso.
 
 ### 6. Rodando o Aplicativo
 Agora, você está pronto para rodar o aplicativo localmente.

@@ -20,7 +20,7 @@ class CharactersEntity extends Equatable {
         id,
         name,
         description,
-        image,
+        image
       ];
 
 }
